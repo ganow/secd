@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import re
+
 from environment import Environment
 
 def hd(lis):
@@ -42,3 +44,16 @@ def derive(env, env_list):
 
 def unitlist(body):
     return [body]
+
+# Validate functions
+# 数値の文字列ならTrueです（Long型 30L とかは対象外）
+def validates_number_of(value):
+    return re.match(r'^(?![-+]0+$)[-+]?([1-9][0-9]*)?[0-9](\.[0-9]+)?$', '%s'%value) and True or False
+
+# 整数値かどうかの検証
+def validates_integer_of(value):
+    return re.match(r'^(?![-+]0*$)[-+]?([1-9][0-9]*)?0?$', '%s'%value) and True or False
+
+# 数値でintegerじゃなかったらfloatよね？（ちょっと手抜き）
+def validates_float_of(value):
+    return validates_number_of(value) and not validates_integer_of(value)

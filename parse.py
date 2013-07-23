@@ -2,6 +2,7 @@
 
 import re, sys
 
+from util_funcs import validates_integer_of, validates_float_of
 from symbol import Symbol, isSymbol
 from lambda_eq import LambdaEq, Combination, isLambdaSymbol, isLambdaEq
 
@@ -77,6 +78,14 @@ class Parser(object):
             return self.parse(self.peel(src))
         elif self.canBeDecomposed(src):
             return [self.parse(x) for x in self.decompose(src)]
+        else:
+            return self.tokenize(src)
+
+    def tokenize(self, src):
+        if validates_integer_of(src):
+            return Symbol(src, int(src))
+        elif validates_float_of(src):
+            return Symbol(src, float(src))
         else:
             return Symbol(src)
 

@@ -16,10 +16,8 @@ class Symbol(object):
     def isEqual(self, rhs):
         if self.__class__ != rhs.__class__:
             return False
-        elif self.name == rhs.name:
-            return True
         else:
-            return False
+            return self.name == rhs.name
 
 def isSymbol(symbol):
     if symbol.__class__ == Symbol:
