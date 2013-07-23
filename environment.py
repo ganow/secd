@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from symbol import isSymbol
+from symbol import isSymbol, isList
 
 class Environment(object):
     def __init__(self, variable, content):
@@ -22,5 +22,9 @@ def find_var_in_env(var, envs):
 
 def find_list_in_env(lis, envs):
     rtn = []
-    for elem in lis: rtn.append(find_var_in_env(elem, envs))
+    for elem in lis:
+        if isList(elem):
+            rtn.append(find_list_in_env(elem, envs))
+        else:
+            rtn.append(find_var_in_env(elem, envs))
     return rtn
