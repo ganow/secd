@@ -1,0 +1,62 @@
+run script: ./data/test_eq.scm
+S: []
+E: []
+C: [((lambda x: (lambda y: [x, y])) ((lambda x: (lambda y: [x, y])) (lambda x: (lambda y: y))))]
+D: D0
+
+S: []
+E: []
+C: [((lambda x: (lambda y: [x, y])) (lambda x: (lambda y: y))), (lambda x: (lambda y: [x, y])), `ap`]
+D: D0
+
+S: []
+E: []
+C: [(lambda x: (lambda y: y)), (lambda x: (lambda y: [x, y])), `ap`, (lambda x: (lambda y: [x, y])), `ap`]
+D: D0
+
+S: [<clos x, (lambda y: y), []>]
+E: []
+C: [(lambda x: (lambda y: [x, y])), `ap`, (lambda x: (lambda y: [x, y])), `ap`]
+D: D0
+
+S: [<clos x, (lambda y: [x, y]), []>, <clos x, (lambda y: y), []>]
+E: []
+C: [`ap`, (lambda x: (lambda y: [x, y])), `ap`]
+D: D0
+
+S: []
+E: [<x = <clos x, (lambda y: y), []>>]
+C: [(lambda y: [x, y])]
+D: [<[], [], [(lambda x: (lambda y: [x, y])), `ap`], D0>]
+
+S: [<clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>]
+E: [<x = <clos x, (lambda y: y), []>>]
+C: []
+D: [<[], [], [(lambda x: (lambda y: [x, y])), `ap`], D0>]
+
+S: [<clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>]
+E: []
+C: [(lambda x: (lambda y: [x, y])), `ap`]
+D: D0
+
+S: [<clos x, (lambda y: [x, y]), []>, <clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>]
+E: []
+C: [`ap`]
+D: D0
+
+S: []
+E: [<x = <clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>>]
+C: [(lambda y: [x, y])]
+D: [<[], [], [], D0>]
+
+S: [<clos y, [x, y], [<x = <clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>>]>]
+E: [<x = <clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>>]
+C: []
+D: [<[], [], [], D0>]
+
+S: [<clos y, [x, y], [<x = <clos y, [x, y], [<x = <clos x, (lambda y: y), []>>]>>]>]
+E: []
+C: []
+D: D0
+
+reduction finished

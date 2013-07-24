@@ -44,6 +44,7 @@ class SECDMachine(object):
         return '[<%s, %s, %s, %s>]' % (self.s, self.e, self.c, self.d)
 
     def update(self):
+
         if self.c == []:
             hd_d = hd(self.d)
             if isD0(hd_d):
@@ -89,6 +90,12 @@ class SECDMachine(object):
         print self
         self.update()
 
+    def clear(self):
+        self.s = []
+        self.e = []
+        self.c = []
+        self.d = D0()
+
 def dialog(secd, parser):
     buf = []
     i = 0
@@ -100,9 +107,13 @@ def dialog(secd, parser):
                 print
                 print 'secd %d :> ' % i,
                 continue
+            print
+
             code = parser.run(buf)
             secd.c = [code]
             secd.update()
+
+            secd.clear()
             buf = []
             i += 1
             print
