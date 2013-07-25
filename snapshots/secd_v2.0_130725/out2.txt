@@ -9,24 +9,34 @@ E: []
 C: [[2, 4, (lambda x: [x, x])], (lambda y: ((lambda x: [y, y, [x, y]]) [1, [2, 2, 2], 4])), `ap`]
 D: D0
 
+
+### child start ###
 S: [2]
 E: []
 C: []
 D: D0
 
 reduction finished
+### 0 th child end ###
+
 S: [4]
 E: []
 C: []
 D: D0
 
 reduction finished
+### 1 th child end ###
+
 S: [<clos x, [x, x], []>]
 E: []
 C: []
 D: D0
 
 reduction finished
+### 2 th child end ###
+
+###  child end  ###
+
 S: [[2, 4, <clos x, [x, x], []>]]
 E: []
 C: [(lambda y: ((lambda x: [y, y, [x, y]]) [1, [2, 2, 2], 4])), `ap`]
@@ -47,42 +57,62 @@ E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: [[1, [2, 2, 2], 4], (lambda x: [y, y, [x, y]]), `ap`]
 D: [<[], [], [], D0>]
 
+
+### child start ###
 S: [1]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 0 th child end ###
+
+
+### child start ###
 S: [2]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 0 th child end ###
+
 S: [2]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 1 th child end ###
+
 S: [2]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 2 th child end ###
+
+###  child end  ###
+
 S: [[2, 2, 2]]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 1 th child end ###
+
 S: [4]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 2 th child end ###
+
+###  child end  ###
+
 S: [[1, [2, 2, 2], 4]]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
 C: [(lambda x: [y, y, [x, y]]), `ap`]
@@ -96,11 +126,17 @@ D: [<[], [], [], D0>]
 S: []
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: [[y, y, [x, y]]]
-D: [<[], [<y = [2, 4, <clos x, [x, x], []>]>], [], S: []
-E: []
+D: [<[], [<y = [2, 4, <clos x, [x, x], []>]>], [], [<[], [], [], D0>]>]
+
+
+### child start ###
+S: [[2, 4, <clos x, [x, x], []>]]
+E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
->]
+
+reduction finished
+### 0 th child end ###
 
 S: [[2, 4, <clos x, [x, x], []>]]
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
@@ -108,38 +144,42 @@ C: []
 D: D0
 
 reduction finished
-S: [[2, 4, <clos x, [x, x], []>]]
-E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
-C: []
-D: D0
+### 1 th child end ###
 
-reduction finished
+
+### child start ###
 S: [[1, [2, 2, 2], 4]]
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 0 th child end ###
+
 S: [[2, 4, <clos x, [x, x], []>]]
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 1 th child end ###
+
+###  child end  ###
+
 S: [[[1, [2, 2, 2], 4], [2, 4, <clos x, [x, x], []>]]]
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: []
 D: D0
 
 reduction finished
+### 2 th child end ###
+
+###  child end  ###
+
 S: [[[2, 4, <clos x, [x, x], []>], [2, 4, <clos x, [x, x], []>], [[1, [2, 2, 2], 4], [2, 4, <clos x, [x, x], []>]]]]
 E: [<x = [1, [2, 2, 2], 4]>, <y = [2, 4, <clos x, [x, x], []>]>]
 C: []
-D: [<[], [<y = [2, 4, <clos x, [x, x], []>]>], [], S: []
-E: []
-C: []
-D: D0
->]
+D: [<[], [<y = [2, 4, <clos x, [x, x], []>]>], [], [<[], [], [], D0>]>]
 
 S: [[2, 4, <clos x, [x, x], []>], [2, 4, <clos x, [x, x], []>], [[1, [2, 2, 2], 4], [2, 4, <clos x, [x, x], []>]]]
 E: [<y = [2, 4, <clos x, [x, x], []>]>]
